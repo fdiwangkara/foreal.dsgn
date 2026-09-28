@@ -1,0 +1,111 @@
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    './app/components/**/*.{vue,ts}',
+    './app/layouts/**/*.vue',
+    './app/pages/**/*.vue',
+    './app/composables/**/*.ts',
+    './app/plugins/**/*.ts',
+    './app/app.vue',
+    './app/error.vue',
+  ],
+  theme: {
+    fontFamily: {
+      sans: ['Manrope', 'system-ui', 'sans-serif'],
+      serif: ['Syne', 'sans-serif'],
+      'serif-alt': ['"Bricolage Grotesque"', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        lime: {
+          DEFAULT: '#BDE64E',
+          50: '#F4FBDA',
+          100: '#EEF8C5',
+          200: '#DDF29B',
+          300: '#CCEB71',
+          400: '#BDE64E',
+          500: '#A6D425',
+          600: '#84AA1D',
+          700: '#627E16',
+          800: '#40530E',
+          900: '#1F2907',
+        },
+        blue: {
+          DEFAULT: '#1246A2',
+          50: '#E8EEF9',
+          100: '#C5D4F0',
+          200: '#8BA8E1',
+          300: '#517DD2',
+          400: '#1E5BBB',
+          500: '#1246A2',
+          600: '#0E3882',
+          700: '#0B2A61',
+          800: '#071C41',
+          900: '#040E20',
+        },
+        dark: '#0A0A0A',
+        'off-white': '#F8F7F4',
+        neutral: {
+          100: '#F5F5F5',
+          200: '#E8E8E8',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+        },
+      },
+      fontSize: {
+        'display-xl': ['clamp(3.5rem, 10vw, 9rem)', { lineHeight: '0.9', letterSpacing: '-0.04em' }],
+        'display-lg': ['clamp(2.5rem, 7vw, 6rem)', { lineHeight: '0.92', letterSpacing: '-0.03em' }],
+        'display-md': ['clamp(1.75rem, 4.5vw, 3.5rem)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
+        'display-sm': ['clamp(1.35rem, 2.5vw, 2rem)', { lineHeight: '1.15', letterSpacing: '-0.015em' }],
+        'heading-lg': ['clamp(1.15rem, 2vw, 1.6rem)', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+        'heading-md': ['clamp(0.95rem, 1.3vw, 1.25rem)', { lineHeight: '1.35', letterSpacing: '-0.005em' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.65' }],
+        'body-md': ['1rem', { lineHeight: '1.65' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.55' }],
+        'label-md': ['0.875rem', { lineHeight: '1.4', letterSpacing: '0.08em' }],
+        'label-sm': ['0.75rem', { lineHeight: '1.3', letterSpacing: '0.1em' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        '144': '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'out-quint': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'in-out-quint': 'cubic-bezier(0.83, 0, 0.17, 1)',
+      },
+      keyframes: {
+        'marquee': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'spin-slow': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'marquee': 'marquee 30s linear infinite',
+        'marquee-slow': 'marquee 50s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'spin-slow': 'spin-slow 20s linear infinite',
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config
